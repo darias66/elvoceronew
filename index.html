@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="elvoceroApp" ng-controller="menuCtrl">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="img/favicon.png" rel="icon"/>
+        <title>{{titulo}}</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"/> 
+
+        <!-- CSS -->
+        <link href="css/mis-estilos.css" rel="stylesheet"/>
+
+        <!-- FontAwesome Icons -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+
+
+
+
+
+
+    </head>    
+    <body>
+
+        <div ng-include="menuSuperior" ng-></div>
+
+
+
+        <!-- La pagina principal ira aquí -->
+        <div ng-view="">
+            <ul>
+                <li ng-repeat="s in secciones">
+                    {{ s.idSeccion + ', ' + s.seccion}}
+                </li>
+            </ul>
+
+        </div>    
+
+
+
+        <div ng-include="menuInferior"></div>
+        <!-- Incluir AngularJS -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+
+
+        <script src="js/elvocero.js"></script>
+        <script src="js/navMenu.js"></script>
+    </body>
+</html>

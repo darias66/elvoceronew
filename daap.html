@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html ng-app="elvoceroApp" ng-controller="menuCtrl">
+    <head>
+
+        <title>{{titulo}}</title>
+
+
+    </head>
+    <body>
+        <div>
+            acceso a elementos especificos de un arreglo de objeto:
+
+            <br>
+            {{menus[0].idMenus}} {{menus[0].menus}}
+            <br>
+            {{menus[1].idMenus}} 
+            <br>
+            {{menus[5].idMenus}} 
+            <br>
+
+            Acceso a todos los elementos de una POSICION ESPECIFICA del arreglo de objetos
+            <br>
+            {{menus[0]}}
+            <br>
+            {{menus[1]}}
+            <br>
+            {{menus[2]}}
+            <br>
+            {{menus[3]}}
+            <br>
+            {{menus[4]}}
+            <br>
+            <br>
+            Acceso a un arreglo de objetos con el formato JSON
+            <br>
+            {{menus|json}}
+        </div>
+        <!-- Incluir AngularJS -->
+        <br>
+        <br>
+        Acceso a un arreglo de objetos a traves del NG-REPEAT
+        <br>
+        <label>Busqueda: <input ng-model="textoBusqueda"></label>
+
+
+        <div>
+
+            
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Sección</th>
+                </tr>
+                <tr ng-repeat="m in menus|filter:textoBusqueda">
+                    <td>{{m.idMenus}}</td>
+                    <td>{{m.menus}}</td>
+                </tr>
+            </table>
+
+
+        </div>
+
+
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+
+
+        <script src="js/elvocero.js"></script>
+    </body>
+</html>
