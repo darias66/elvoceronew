@@ -43,7 +43,7 @@
                         <div class="thumbnail pnoticias">
                             <img class="imgportada" src="{{p.imagen}}" alt="...">
                             <div class="caption">
-                                <h4 class="ptitulonoticias">{{p.titulo}}</h4>
+                                <h4 class="ptitulonoticias">{{p.title}}</h4>
                                 <p class="fecha">{{p.fecha}}</p>
                                 <p class="ptxtnoticias">
                                     {{p.sintesis}}
@@ -57,7 +57,7 @@
             </div> <!-- /.panel-body -->
         </div> <!-- /panel -->
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" ng-controller="consultaSecciones">
             <a href="#/policia" style="text-decoration: none;">
                 <div class="panel-heading" id="ppolicia">
                     <h1 class="panel-title"><b>POLICIA</b></h1>
@@ -66,14 +66,14 @@
             <div class="panel-body">
                 <div class="row">
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4"  ng-repeat="poli in policia">
                         <div class="thumbnail pnoticias">
                             <img class="imgportada" src="img/images (2).jpg" alt="...">
                             <div class="caption">
-                                <h4 class="ptitulonoticias"></h4>
-                                <p class="fecha"></p>
+                                <h4 class="ptitulonoticias">{{poli.title}}</h4>
+                                <p class="fecha">{{poli.fecha}}</p>
                                 <p class="ptxtnoticias">
-                                    
+                                    {{poli.sintesis}}
                                 </p>
                                 <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
                             </div>
@@ -84,7 +84,7 @@
             </div> <!-- /.panel-body -->
         </div> <!-- /panel -->
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" ng-controller="consultaSecciones">
             <a href="#/deportes" style="text-decoration: none;">
                 <div class="panel-heading" id="pdeportes">
                     <h1 class="panel-title"><b>DEPORTES</b></h1>
@@ -93,51 +93,14 @@
             <div class="panel-body">
                 <div class="row">
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" ng-repeat="dep in deportes">
                         <div class="thumbnail pnoticias">
                             <img class="imgportada" src="img/images (2).jpg" alt="...">
                             <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
+                                <h4 class="ptitulonoticias">{{dep.title}}</h4>
+                                <p class="fecha">{{dep.fecha}}</p>
                                 <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
-                            </div>
-                        </div>
-                    </div> <!-- /.lg-4 -->
-
-                    <div class="col-sm-4">
-                        <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img/images (2).jpg" alt="...">
-                            <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
-                                <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
-                            </div>
-                        </div>
-                    </div> <!-- /.lg-4 -->
-
-                    <div class="col-sm-4">
-                        <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img/images (2).jpg" alt="...">
-                            <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
-                                <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
+                                    {{dep.sintesis}}
                                 </p>
                                 <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
                             </div>
@@ -148,7 +111,7 @@
             </div> <!-- /.panel-body -->
         </div> <!-- /panel -->
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" ng-controller="consultaSecciones">
             <a href="#/espectaculos" style="text-decoration: none;">
                 <div class="panel-heading" id="pespectaculos">
                     <h1 class="panel-title"><b>ESPECTACULOS</b></h1>
@@ -157,51 +120,14 @@
             <div class="panel-body">
                 <div class="row">
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" ng-repeat="espe in espec">
                         <div class="thumbnail pnoticias">
                             <img class="imgportada" src="img/images (2).jpg" alt="...">
                             <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
+                                <h4 class="ptitulonoticias">{{espe.title}}</h4>
+                                <p class="fecha">{{espe.fecha}}</p>
                                 <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
-                            </div>
-                        </div>
-                    </div> <!-- /.lg-4 -->
-
-                    <div class="col-sm-4">
-                        <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img/images (2).jpg" alt="...">
-                            <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
-                                <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
-                                </p>
-                                <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
-                            </div>
-                        </div>
-                    </div> <!-- /.lg-4 -->
-
-                    <div class="col-sm-4">
-                        <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img/images (2).jpg" alt="...">
-                            <div class="caption">
-                                <h4 class="ptitulonoticias">Título de la noticia</h4>
-                                <p class="fecha"> Febrero 01, 2016</p>
-                                <p class="ptxtnoticias">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. 
+                                    {{espe.sintesis}}
                                 </p>
                                 <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
                             </div>

@@ -23,11 +23,49 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
         $http.get('./php/consultaSeccionMunicipios.php').success(function (arraySeccMpios) {
             $scope.noticia = arraySeccMpios;
         });
-        
+
         $scope.politica = {};
         $http.get('./php/consultaSeccionPolitica.php').success(function (arraySeccGob) {
             $scope.politica = arraySeccGob;
         });
-        
+
+        $scope.policia = {};
+        $http.get('./php/consultaSeccionPolicia.php').success(function (arraySeccPolicia) {
+            $scope.policia = arraySeccPolicia;
+        });
+
+        $scope.deportes = {};
+        $http.get('./php/consultaSeccionDeportes.php').success(function (arraySeccDeportes) {
+            $scope.deportes = arraySeccDeportes;
+        });
+
+        $scope.espec = {};
+        $http.get('./php/consultaSeccionEspectaculos.php').success(function (arraySeccEspec) {
+            $scope.espec = arraySeccEspec;
+        });
+
+        $scope.mpios = {};
+        $http.get('./php/consultaSeccMupios.php').success(function (arraySeccMupios) {
+            $scope.mpios = arraySeccMupios;
+            
+            var cont= 5;
+
+            $scope.posicion = cont;
+
+            $scope.siguientes = function () {
+                if ($scope.mpios.length > $scope.posicion) {
+                    $scope.posicion += cont;
+                }
+                ;
+            };
+            $scope.anteriores = function () {
+                if ($scope.posicion > cont) {
+                    $scope.posicion -= cont;
+                }
+                ;
+            };
+
+
+        });
 
     }]);
