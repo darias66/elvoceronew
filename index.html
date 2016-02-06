@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="elvoceroApp" ng-controller="menuCtrl" ng-controller="consultaSecciones">
+<html ng-app="elvoceroApp" ng-controller="menuCtrl">
     <head>
 
         <meta charset="UTF-8">
@@ -30,12 +30,7 @@
 
         <!-- La pagina principal ira aquí -->
         <div ng-view="">
-            <ul>
-                <li ng-repeat="s in secciones">
-                    {{ s.idSeccion + ', ' + s.seccion}}
-                </li>
-            </ul>
-
+            
         </div>    
 
 
@@ -50,5 +45,8 @@
 
         <script src="js/elvocero.js"></script>
         <script src="js/navMenu.js"></script>
+        
+        
+        
     </body>
 </html>

@@ -11,21 +11,23 @@ app.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.menus = {};
         $http.get('./php/menusListado.php').success(function (distribuidora) {
             $scope.menus = distribuidora;
-
-
         });
-        $scope.noticia = {};
-        $http.get('.php/consultaSeccionMunicipios.php').success(function ($arraySeccMpios) {
-            $scope.noticia = $arraySeccMpios;
-        });
+
 
     }]);
 
-//app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http) {
-//        $scope.noticia = {};
-//        $http.get('.php/consultaSeccionMunicipios.php').success(function ($arraySeccMpios) {
-//            $scope.noticia = $arraySeccMpios;
-//        });
-//
-//    }]);
 
+app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http) {
+
+        $scope.noticia = {};
+        $http.get('./php/consultaSeccionMunicipios.php').success(function (arraySeccMpios) {
+            $scope.noticia = arraySeccMpios;
+        });
+        
+        $scope.politica = {};
+        $http.get('./php/consultaSeccionPolitica.php').success(function (arraySeccGob) {
+            $scope.politica = arraySeccGob;
+        });
+        
+
+    }]);
