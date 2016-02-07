@@ -17,10 +17,11 @@
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{n.title}}</h4>
                                 <p class="fecha"> {{n.fecha}}</p>
+                                <p class="fecha"> {{n.id}}</p>
                                 <p class="ptxtnoticias">
                                     {{n.sintesis}} 
                                 </p>
-                                <p><a href="#/noticia" class="btn btn-primary" role="button">Leer más</a> 
+                                <p><a href="#/noticia/{{n.id}}" class="btn btn-primary" role="button">Leer más</a> 
                             </div>
                         </div>
                     </div> <!-- /.lg-4 -->
