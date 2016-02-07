@@ -71,11 +71,10 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
 
     }]);
 
-app.controller('noticiaCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('noticiaCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
         
         $scope.prueba="funciono";
         $scope.nota = {};
-        $http.get('./php/noticias.getNoticia.php').success(function (arrayNoticia) {
-            $scope.nota = arrayNoticia;
-        });
+        $scope.id = $routeParams.id;
+        
 }]);
