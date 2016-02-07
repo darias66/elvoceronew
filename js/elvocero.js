@@ -49,6 +49,7 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
             $scope.mpios = arraySeccMupios;
             
             var cont= 5;
+            $scope.totalNoticias= $scope.mpios.length;
 
             $scope.posicion = cont;
 
