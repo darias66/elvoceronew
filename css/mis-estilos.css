@@ -391,6 +391,6 @@ body{
     font-size: 12px;
 }
 
-.btnpagina{
-    margin-left: 100px;
+.paginacion{
+    float: right;
 }

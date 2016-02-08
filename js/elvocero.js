@@ -78,8 +78,11 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         var codigo = $routeParams.id;
         
         $scope.nota = {};
-        $http.get('./php/noticias.getNoticia.php?id='+codigo).success(function (arrayNota) {
+        $http.get('./php/noticias.getNoticia.php?id='+ codigo).success(function (arrayNota) {
             $scope.nota = arrayNota;
         });
+//        
+       
+       
         
 }]);
