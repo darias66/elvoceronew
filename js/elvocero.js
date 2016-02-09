@@ -47,9 +47,9 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
         $scope.mpios = {};
         $http.get('./php/consultaSeccMupios.php').success(function (arraySeccMupios) {
             $scope.mpios = arraySeccMupios;
-            
-            var cont= 5;
-            $scope.totalNoticias= $scope.mpios.length;
+
+            var cont = 5;
+            $scope.totalNoticias = $scope.mpios.length;
 
             $scope.posicion = cont;
 
@@ -72,17 +72,20 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
     }]);
 
 app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
-        
-        $scope.prueba="funciono";
-        
+
+        $scope.prueba = "funciono";
+
         var codigo = $routeParams.id;
-        
+
         $scope.nota = {};
-        $http.get('./php/noticias.getNoticia.php?id='+ codigo).success(function (arrayNota) {
-            $scope.nota = arrayNota;
+//       $http.get('./php/noticias.getNoticia.php?c='+codigo).success(function (row) {
+//           $scope.nota = row;
+//       });
+
+        $http.get('./php/noticias.getNoticia.php?c=' + codigo).then(function (response) {
+            $scope.nota = response.data.records;
         });
-//        
-       
-       
-        
-}]);
+
+    }]);
+
+
