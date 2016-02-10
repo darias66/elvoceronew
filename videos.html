@@ -1,96 +1,29 @@
 <!-- CONTENIDO -->
 <section class="container espacio">
-    <div class="col-lg-12">
+    <div class="col-lg-12" ng-controller="consultaSecciones">
         <div class="panel panel-default">
             <div class="panel-heading" id="pvideos">
                 <h1 class="panel-title"><b>VIDEOS</b></h1>
             </div> <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" ng-repeat="vi in videos| limitTo: posicion1 | limitTo: -9">
                         <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
+                                <img src="{{vi.idd}}" alt="...">
                                 <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
+                                    <h4 class="ptitulonoticias">{{vi.comentario}}</h4>
                                 </div>
                             </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
+                        <hr>
                     </div> <!-- /.lg-4 -->
                 </div> <!-- /.row -->
-                <hr>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                </div> <!-- /.row -->
-                <hr>
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                    <div class="col-sm-4">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="img/images (2).jpg" alt="...">
-                                <div class="caption">
-                                    <h4 class="ptitulonoticias">Título del video</h4>
-                                </div>
-                            </div> </a>
-                    </div> <!-- /.lg-4 -->
-                </div> <!-- /.row -->
-
             </div> <!-- /.panel-body -->
         </div> <!-- /.panel -->
+         <section class="paginacion">
+            <div class="btn" ng-click="anteriores()"><i class="fa fa-arrow-circle-left fa-3x"></i></div>
+            <div class="btn" ng-click="siguientes()"><i class="fa fa-arrow-circle-right fa-3x"></i></div>
+            <label>{{posicion1}} / {{totaldeNoticias}}</label>
+        </section>
     </div> <!-- /.col-lg-12 -->
 </section> <!-- /.container -->
 <!-- /Contenido -->
