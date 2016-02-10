@@ -26,7 +26,6 @@ app.config(function ($routeProvider) {
             })
             .when('/noticia/:id', {
                 templateUrl: 'noticia.html'
-                
             })
             .when('/verVideos', {
                 templateUrl: 'verVideos.html'

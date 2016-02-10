@@ -8,10 +8,10 @@ app.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) {
 
         $scope.slogan = "El Vocero | La voz oficial de la noticia";
 
-        $scope.menus = {};
-        $http.get('./php/menusListado.php').success(function (distribuidora) {
-            $scope.menus = distribuidora;
-        });
+//        $scope.menus = {};
+//        $http.get('./php/menusListado.php').success(function (distribuidora) {
+//            $scope.menus = distribuidora;
+//        });
 
 
     }]);
@@ -78,12 +78,14 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         var codigo = $routeParams.id;
 
         $scope.nota = {};
-//       $http.get('./php/noticias.getNoticia.php?c='+codigo).success(function (row) {
-//           $scope.nota = row;
-//       });
+        $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (data) {
 
-        $http.get('./php/noticias.getNoticia.php?c=' + codigo).then(function (response) {
-            $scope.nota = response.data.records;
+            if (data.err !== undefined)
+            {
+                window.location = "#/portada";
+                return;
+            }
+            $scope.nota = data[0];
         });
 
     }]);
