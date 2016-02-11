@@ -217,13 +217,14 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
 app.controller('videoCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams,$http) {
 
 
-//        $scope.mensaje = "FUNCIONA CONTRALADOR";
+        $scope.mensaje = "FUNCIONA CONTRALADOR";
+        $scope.idVideo=$routeParams.idVideos;
         var video = $routeParams.idVideos;
 
         $scope.videos = {};
-        $http.get('./php/videos.getVideos.php?v=' + video).success(function (arraySeccVideos) {
+        $http.get('./php/videos.getVideos.php?v=' + video).success(function(datos) {
 
-            $scope.videos = arraySeccVideos[0];
+            $scope.videos =datos[0];
         });
 
     }]);

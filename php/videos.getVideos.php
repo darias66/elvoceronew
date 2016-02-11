@@ -15,12 +15,12 @@ if (!isset($_GET['v'])){
 //Desinfectar el Parametro.
 $video = $_GET['v'];
 
-echo $video;
+
 
 
 $query = "SELECT id FROM videos WHERE idVideos ='$video'";
 
-echo $query;
+
 
 $result = mysql_query($query);
 
@@ -33,7 +33,7 @@ while ($row = mysql_fetch_array($result)) {
     
     $arraySeccVideos[] = $videos;
 }
-echo var_dump($arraySeccVideos);
+
 # JSON-encode the response
 echo $json_response = json_encode($arraySeccVideos);
 
