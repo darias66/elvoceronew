@@ -18,7 +18,7 @@ $video = $_GET['v'];
 
 
 
-$query = "SELECT id FROM videos WHERE idVideos ='$video'";
+$query = "SELECT id,url FROM videos WHERE idVideos ='$video'";
 
 
 
@@ -29,6 +29,7 @@ $arraySeccVideos = array();
 while ($row = mysql_fetch_array($result)) {
     $videos = new stdClass();
     $videos->id = $row["id"];
+    $videos->url = $row["url"];
     
     
     $arraySeccVideos[] = $videos;

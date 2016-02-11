@@ -16,7 +16,7 @@ while ($row = mysql_fetch_array($result)) {
     $seccVideos = new stdClass();
     $seccVideos->idVideos = $row["idVideos"];
     $seccVideos->url = $row["url"];
-    $seccVideos->idd = $row["id"];
+    $seccVideos->id = $row["id"];
     $seccVideos->comentario = utf8_encode($row["comentario"]);
     
     $arrayVideos[] = $seccVideos;

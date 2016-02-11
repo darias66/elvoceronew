@@ -1,4 +1,4 @@
-var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute']);
+var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute','youtube-controller', 'youtube-service', 'youtube-directive']);
 
 //CONTROLADOR PRINCIPAL
 app.controller('menuCtrl', ['$scope', function ($scope) {
