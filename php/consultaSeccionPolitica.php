@@ -4,7 +4,7 @@ include_once '../conexiones/conexion.php';
 $cn = new conexion();
 $cn->Conectarse();
 
-$query = 'SELECT imagen,titulo,fecha,sintesis FROM noticias WHERE idMenus = 3 ORDER BY fecha DESC LIMIT 3
+$query = 'SELECT idNoticias,imagen,titulo,fecha,sintesis FROM noticias WHERE idMenus = 3 ORDER BY fecha DESC LIMIT 3
 ';
 
 $result = mysql_query($query);
@@ -13,6 +13,7 @@ $arraySeccGob = array();
 
 while ($row = mysql_fetch_array($result)) {
     $politica = new stdClass();
+    $politica->id = $row["idNoticias"];
     $politica->imagen = $row["imagen"];
     $politica->title = utf8_encode($row["titulo"]);
     $politica->fecha = $row["fecha"];

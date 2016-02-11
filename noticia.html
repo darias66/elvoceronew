@@ -5,15 +5,15 @@
             <div class="panel-body">
                 <div class="row" >
                     <div class="col-lg-12">
-                        <h3 class="titulonota"> </h3>
-                        <h3 class="titulonota">{{nota.title}} </h3>
+                       
+                        <h4 class="titulonota">{{nota.title | uppercase}}</h4>
                         <!--{{nota|json}}-->
                     </div> <!-- /.lg-7 -->
                 </div> <!-- /.row -->
                 <br>
                 <div class="row">
                     <div class="col-lg-12 fecha">
-                        <p></p>
+                        <p>{{nota.fecha}}</p>
                     </div> <!-- /.lg-7 -->
                 </div> <!-- /.row --> 
                 <br>
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-lg-12 textonoticias">
                         <p>
-                            CONTENIDO NOTA
+                            {{nota.contenido}}
                         </p>
                     </div> <!-- /.lg-7 -->
                 </div> <!-- /.row -->   
