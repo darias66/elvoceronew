@@ -80,11 +80,11 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         $scope.nota = {};
         $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (data) {
 
-            if (data.err !== undefined)
-            {
-                window.location = "#/portada";
-                return;
-            }
+//            if (data.err !== undefined)
+//            {
+//                window.location = "#/portada";
+//                return;
+//            }
             $scope.nota = data[0];
         });
 
