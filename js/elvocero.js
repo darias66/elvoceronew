@@ -18,7 +18,7 @@ app.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) {
     }]);
 
 
-app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http) {
+app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) {
 
 //CONSULTAS PARA LAS ULTIMAS NOTICIAS DE TODAS LAS SECCIONES EN PORTADA
         $scope.noticia = {};
@@ -172,8 +172,14 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
         });
         
         //sección Videos
+        
+       
+        
         $scope.videos = {};
         $http.get('./php/consultaSeccionVideos.php').success(function (arraySeccVideos){
+            
+          
+            
             $scope.videos = arraySeccVideos;
             
             var cont = 9;
