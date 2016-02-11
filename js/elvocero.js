@@ -206,14 +206,14 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         var codigo = $routeParams.id;
 
         $scope.nota = {};
-        $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (data) {
+        $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (arrayNoticia) {
 
 //            if (data.err !== undefined)
 //            {
 //                window.location = "#/portada";
 //                return;
 //            }
-            $scope.nota = data[0];
+            $scope.nota = arrayNoticia[0];
         });
 
     }]);
