@@ -1,7 +1,7 @@
-var app = angular.module('elvoceroApp', ['ui.bootstrap','ngRoute']);
+var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute']);
 
 //CONTROLADOR PRINCIPAL
-app.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('menuCtrl', ['$scope', function ($scope) {
         $scope.menuSuperior = 'fijos/encabezado.html';
         $scope.menuInferior = 'fijos/footer.html';
 
@@ -18,7 +18,7 @@ app.controller('menuCtrl', ['$scope', '$http', function ($scope, $http) {
     }]);
 
 
-app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) {
+app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http) {
 
 //CONSULTAS PARA LAS ULTIMAS NOTICIAS DE TODAS LAS SECCIONES EN PORTADA
         $scope.noticia = {};
@@ -101,9 +101,9 @@ app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) 
 
         //sección Policía
         $scope.policiaca = {};
-        $http.get('./php/consultaSintesisSeccPolicia.php').success(function (arrayPoliciaca){
+        $http.get('./php/consultaSintesisSeccPolicia.php').success(function (arrayPoliciaca) {
             $scope.policiaca = arrayPoliciaca;
-            
+
             var cont = 5;
             $scope.totalNoticias = $scope.policiaca.length;
 
@@ -122,12 +122,12 @@ app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) 
                 ;
             };
         });
-        
+
         //sección Deportes
         $scope.deportivas = {};
-        $http.get('./php/consultaSintesisSeccDeportes.php').success(function (arrayDeportes){
+        $http.get('./php/consultaSintesisSeccDeportes.php').success(function (arrayDeportes) {
             $scope.deportivas = arrayDeportes;
-            
+
             var cont = 5;
             $scope.totalNoticias = $scope.deportivas.length;
 
@@ -146,12 +146,12 @@ app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) 
                 ;
             };
         });
-        
+
         //sección Espectáculos
         $scope.espectaculos = {};
-        $http.get('./php/consultaSintesisSeccEspectaculos.php').success(function (arrayEspectaculos){
+        $http.get('./php/consultaSintesisSeccEspectaculos.php').success(function (arrayEspectaculos) {
             $scope.espectaculos = arrayEspectaculos;
-            
+
             var cont = 5;
             $scope.totalNoticias = $scope.espectaculos.length;
 
@@ -170,25 +170,19 @@ app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) 
                 ;
             };
         });
-        
-        //sección Videos
-        
-       
-        
-        $scope.videos = {};
-        $http.get('./php/consultaSeccionVideos.php').success(function (arraySeccVideos){
-            
-          
-            
-            $scope.videos = arraySeccVideos;
-            
+
+        //sección videos
+        $scope.seccVideos = {};
+        $http.get('./php/consultaSeccionVideos.php').success(function (arrayVideos) {
+            $scope.seccVideos = arrayVideos;
+
             var cont = 9;
-            $scope.totaldeNoticias = $scope.videos.length;
+            $scope.totaldeNoticias = $scope.seccVideos.length;
 
             $scope.posicion1 = cont;
 
             $scope.siguientes = function () {
-                if ($scope.videos.length > $scope.posicion1) {
+                if ($scope.seccVideos.length > $scope.posicion1) {
                     $scope.posicion1 += cont;
                 }
                 ;
@@ -200,7 +194,6 @@ app.controller('consultaSecciones', ['$scope', '$http',function ($scope, $http) 
                 ;
             };
         });
-        
     }]);
 
 //CONTROLADOR PARA LAS NOTAS
@@ -214,12 +207,23 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         $scope.nota = {};
         $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (arrayNoticia) {
 
-//            if (data.err !== undefined)
-//            {
-//                window.location = "#/portada";
-//                return;
-//            }
             $scope.nota = arrayNoticia[0];
+        });
+
+    }]);
+
+
+//CONTROLADOR PARA LA SECCION VIDEOS
+app.controller('videoCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams,$http) {
+
+
+//        $scope.mensaje = "FUNCIONA CONTRALADOR";
+        var video = $routeParams.idVideos;
+
+        $scope.videos = {};
+        $http.get('./php/videos.getVideos.php?v=' + video).success(function (arraySeccVideos) {
+
+            $scope.videos = arraySeccVideos[0];
         });
 
     }]);

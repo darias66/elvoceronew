@@ -1,20 +1,19 @@
 <!-- CONTENIDO -->
 <section class="container espacio">
     <div class="col-lg-12" ng-controller="consultaSecciones">
-        <div class="panel panel-default">
+        <div class="panel">
             <div class="panel-heading" id="pvideos">
                 <h1 class="panel-title"><b>VIDEOS</b></h1>
             </div> <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-4" ng-repeat="vi in videos| limitTo: posicion1 | limitTo: -9">
-                        <a href="#/verVideos" style="text-decoration: none;"><div class="thumbnail pnoticias">
-                                <img src="http://img.youtube.com/vi/{{vi.idd}}/default.jpg" alt="...">
+                    <div class="col-sm-4" ng-repeat="vd in seccVideos| limitTo : posicion1 | limitTo : -9">
+                        <a href="#/verVideos/{{vd.idVideos}}" style="text-decoration: none;"><div class="thumbnail">
+                                <img src="http://img.youtube.com/vi/{{vd.idd}}/default.jpg" alt="..." class="imgvideos">
                                 <div class="caption">
-                                    <h4 class="ptitulonoticias">{{vi.comentario}}</h4>
+                                    <h4 class="ptitulonoticias">{{vd.comentario}}</h4>
                                 </div>
                             </div> </a>
-                        <hr>
                     </div> <!-- /.lg-4 -->
                 </div> <!-- /.row -->
             </div> <!-- /.panel-body -->
