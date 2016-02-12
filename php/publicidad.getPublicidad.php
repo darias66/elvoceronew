@@ -42,13 +42,6 @@ while ($row = mysql_fetch_array($result)) {
      $arrayPublico[] = $publico;
 }
 
-//$rawdata = array();
-//$i=0;
-//while($row = mysql_fetch_array($result))
-//    {
-//        $rawdata[$i] = $row;
-//        $i++;
-//    }
 
 # JSON-encode the response
 echo $json_response = json_encode($arrayPublico);

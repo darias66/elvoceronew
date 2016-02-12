@@ -2,8 +2,8 @@ var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute', 'youtube-con
 
 //CONTROLADOR PRINCIPAL
 app.controller('menuCtrl', ['$scope', function ($scope) {
-        $scope.menuSuperior = 'fijos/encabezado.html';
-        $scope.menuInferior = 'fijos/footer.html';
+        $scope.menuSuperior = 'header-footer/encabezado.html';
+        $scope.menuInferior = 'header-footer/footer.html';
 
         $scope.publicidad = 'publicidadNotas.html';
 
@@ -266,8 +266,8 @@ app.controller('videoCtrl', ['$scope', '$routeParams', '$http', function ($scope
 
 app.controller('publicidadCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
-        $scope.prueba = "funciono";
-        $scope.codigo = $routeParams.idBanners;
+//        $scope.prueba = "funciono";
+//        $scope.codigo = $routeParams.idBanners;
         var codigo = $routeParams.idBanners;
 
         $scope.publico = {};

@@ -398,3 +398,8 @@ body{
 .imgvideos{
     margin-top: 10px;
 }
+.imgpublico{
+    width: 600px;
+    height: 400px;
+    margin: auto;
+}
