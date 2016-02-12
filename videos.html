@@ -7,11 +7,11 @@
             </div> <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-4" ng-repeat="vd in seccVideos| limitTo : posicion1 | limitTo : -9">
+                    <div class="col-sm-4" ng-repeat="vd in seccVideos| limitTo : posicion1 | limitTo : -3">
                         <a href="#/verVideos/{{vd.idVideos}}" style="text-decoration: none;" target="_blank"><div class="thumbnail">
                                 <img src="http://img.youtube.com/vi/{{vd.id}}/default.jpg" alt="..." class="imgvideos">
                                 <div class="caption">
-                                    <h4 class="ptitulonoticias">{{vd.comentario}}</h4>
+                                    <h4 class="ptitulonoticias">{{vd.comentario | uppercase}}</h4>
                                 </div>
                             </div> </a>
                     </div> <!-- /.lg-4 -->

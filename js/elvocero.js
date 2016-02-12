@@ -1,4 +1,4 @@
-var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute','youtube-controller', 'youtube-service', 'youtube-directive']);
+var app = angular.module('elvoceroApp', ['ui.bootstrap', 'ngRoute', 'youtube-controller', 'youtube-service', 'youtube-directive']);
 
 //CONTROLADOR PRINCIPAL
 app.controller('menuCtrl', ['$scope', function ($scope) {
@@ -48,6 +48,14 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
 
 
 //CONSULTAS PARA LAS SINTESIS DE TODAS LAS NOTICIAS EN CADA UNA DE LAS SECCIONES 
+
+
+        //sección de Publicidad en las Notas
+        $scope.publicidadNotas = {};
+        $http.get('./php/consultaPublicidadEnNotas.php').success(function (arrayPublicidadNotas) {
+            $scope.publicidadNotas = arrayPublicidadNotas;
+        });
+
 
         //sección de Municipios
         $scope.mpios = {};
@@ -176,7 +184,7 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
         $http.get('./php/consultaSeccionVideos.php').success(function (arrayVideos) {
             $scope.seccVideos = arrayVideos;
 
-            var cont = 9;
+            var cont = 3;
             $scope.totaldeNoticias = $scope.seccVideos.length;
 
             $scope.posicion1 = cont;
@@ -194,6 +202,31 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
                 ;
             };
         });
+
+        //sección Publicidad
+        $scope.publicidad = {};
+        $http.get('./php/consultaSeccionPublicidad.php').success(function (arrayPublicidad) {
+            $scope.publicidad = arrayPublicidad;
+
+            var cont = 3;
+            $scope.totaldNoticias = $scope.publicidad.length;
+
+            $scope.posicion2 = cont;
+
+            $scope.siguientes = function () {
+                if ($scope.publicidad.length > $scope.posicion2) {
+                    $scope.posicion2 += cont;
+                }
+                ;
+            };
+            $scope.anteriores = function () {
+                if ($scope.posicion2 > cont) {
+                    $scope.posicion2 -= cont;
+                }
+                ;
+            };
+        });
+
     }]);
 
 //CONTROLADOR PARA LAS NOTAS
@@ -214,19 +247,33 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
 
 
 //CONTROLADOR PARA LA SECCION VIDEOS
-app.controller('videoCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams,$http) {
+app.controller('videoCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
 
         $scope.mensaje = "FUNCIONA CONTRALADOR";
-        $scope.idVideo=$routeParams.idVideos;
+        $scope.idVideos = $routeParams.idVideos;
         var video = $routeParams.idVideos;
 
         $scope.videos = {};
-        $http.get('./php/videos.getVideos.php?v=' + video).success(function(datos) {
+        $http.get('./php/videos.getVideos.php?v=' + video).success(function (datos) {
 
-            $scope.videos =datos[0];
+            $scope.videos = datos[0];
         });
 
     }]);
 
+//CONTROLADOR PARA PUBLICIDAD
 
+app.controller('publicidadCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+
+        $scope.prueba = "funciono";
+        $scope.codigo = $routeParams.idBanners;
+        var codigo = $routeParams.idBanners;
+
+        $scope.publico = {};
+        $http.get('./php/publicidad.getPublicidad.php?c=' + codigo).success(function (data) {
+
+            $scope.publico = data[0];
+        });
+
+    }]);

@@ -3,6 +3,7 @@
 body{ 
     background: white;
     cursor:default;
+    min-height: 100px;
 }
 .espacio{
     margin-top: 100px;

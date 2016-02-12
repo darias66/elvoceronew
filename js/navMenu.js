@@ -18,8 +18,11 @@ app.config(function ($routeProvider) {
             .when('/espectaculos', {
                 templateUrl: 'espectaculos.html'
             })
-            .when('/publicidad1', {
-                templateUrl: 'publicidad1.html'
+            .when('/seccionPublicidad', {
+                templateUrl: 'seccionPublicidad.html'
+            })
+            .when('/vistaPublicidad/:idBanners', {
+                templateUrl: 'vistaPublicidad.html'
             })
             .when('/videos', {
                 templateUrl: 'videos.html'
