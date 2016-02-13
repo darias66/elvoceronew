@@ -25,12 +25,13 @@ app.controller('consultaSecciones', ['$scope', '$http', function ($scope, $http)
         $http.get('./php/consultaSeccionEspectaculos.php').success(function (arraySeccEspec) {
             $scope.espec = arraySeccEspec;
         });
-
+    }]);
 
 //CONSULTAS PARA LAS SINTESIS DE TODAS LAS NOTICIAS EN CADA UNA DE LAS SECCIONES 
 
 
-        //sección de Publicidad en las Notas
+//sección de Publicidad en las Notas
+app.controller('publicidadEnNotas', ['$scope', '$http', function ($scope, $http) {
         $scope.publicidadNotas = {};
         $http.get('./php/consultaPublicidadEnNotas.php').success(function (arrayPublicidadNotas) {
             $scope.publicidadNotas = arrayPublicidadNotas;
