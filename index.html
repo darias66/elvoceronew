@@ -9,6 +9,8 @@
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet"/> 
+        <link rel="stylesheet" href="boostrap/css/bootstrap-theme.min.css"/>
+        
 
         <!-- CSS -->
         <link href="css-pco/mis-estilos.css" rel="stylesheet"/>
@@ -25,7 +27,8 @@
     <body>
 
         <div id="fb-root"></div>
-        <script>(function (d, s, id) {
+        <script>
+                    (function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (d.getElementById(id))
                             return;
@@ -33,7 +36,8 @@
                         js.id = id;
                         js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.5";
                         fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script> 
+                    }(document, 'script', 'facebook-jssdk'));
+        </script> 
 
         <div ng-include="menuSuperior" ng-></div> 
 
@@ -48,22 +52,19 @@
 
         <div ng-include="menuInferior"></div>
         <!-- Incluir AngularJS -->
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script src="boostrap/js/bootstrap.js"></script>
+        <!--<script src="boostrap/js/npm.js"></script>-->
         <script src="js/angular.min.js"></script>
         <script src="js/angular-route.min.js"></script>
-        <script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>
+        <!--<script src="js/ui-bootstrap-tpls-1.1.2.min.js"></script>-->
         <!-- JQUERY -->
-        <script src="js/jquery-1.12.0.min.js"></script>
-
         <script src="js-pco/elvocero.js"></script>
         <script src="js-pco/controladorSecciones.js"></script>
         <script src="js-pco/navMenu.js"></script>
-
         <!-- JS PARA LA SECCION DE VIDEOS -->
         <script src="js/controller.js"></script>
         <script src="js/directive.js"></script>
         <script src="js/service.js"></script>
-
-
-
     </body>
 </html>
