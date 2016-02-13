@@ -7,7 +7,7 @@ $cn->Conectarse();
 $error = "";
 
 //Verificar que venga el parametro.
-if (!isset($_GET['v'])){
+if (!isset($_GET['v'])) {
     echo $error = "Falta el codigo";
     die;
 }
@@ -30,11 +30,11 @@ while ($row = mysql_fetch_array($result)) {
     $videos = new stdClass();
     $videos->id = $row["id"];
     $videos->url = $row["url"];
-    
-    
+
+
     $arraySeccVideos[] = $videos;
 }
 
 # JSON-encode the response
-echo $json_response = json_encode($arraySeccVideos);
+echo $json_response = json_encode($videos);
 

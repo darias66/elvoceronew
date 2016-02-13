@@ -403,3 +403,12 @@ body{
     height: 400px;
     margin: auto;
 }
+
+
+.titulopublicidad{
+    text-align: center;
+    color: #245269;
+}
+.txtpublicidad{
+    text-align: center;
+}

@@ -29,7 +29,7 @@ $result = mysql_query($query);
 
 
 
-$arrayPublico = array();
+//$arrayPublico = array();
 
 while ($row = mysql_fetch_array($result)) {
     $publico = new stdClass();
@@ -39,10 +39,10 @@ while ($row = mysql_fetch_array($result)) {
     $publico->contenido = utf8_encode($row["contenido"]);
 
 
-     $arrayPublico[] = $publico;
+//     $arrayPublico = $publico;
 }
 
 
 # JSON-encode the response
-echo $json_response = json_encode($arrayPublico);
+echo $json_response = json_encode($publico);
 ?>
