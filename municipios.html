@@ -60,17 +60,15 @@
 
 <!-- ENTRADA MODAL -->
 <div class="modal fade" id="buscar">
-    <div class="modal-dialog">   
+    <div class="modal-dialog" ng-controller="mpiosCtrl">   
         <div id="modalmun" class="modal-content">
             <div class="modal-body">
                 <div class="form-group">
                     <label>Selecciona un municipio:</label> 
-                    <select class="form-control">
-                        <option value="1">Abalá</option>
-                        <option value="2">Acanceh</option>
-                        <option value="3">Akil</option> 
-                    </select>
+                    <select ng-model="selected" ng-options="m as opt.municipio for opt in municipios" ng-init="selected = 'Akil'"></select>
                 </div> <!-- /.form-group -->
+
+
                 <div class="form-group">
                     <label>del día:</label> 
                     <select class="form-horizontal">
@@ -84,8 +82,9 @@
                         <option value="2">05-01-2016</option>
                         <option value="3">06-01-2016</option> 
                     </select>
-                </div> <!-- /.form-group -->
 
+                </div> <!-- /.form-group -->
+                {{selected}}
             </div>
             <div class="modal-footer">
                 <div class="btn btn-info "><a href="#/noticiasMunicipios" id="btnmun"> Buscar </a></div>
