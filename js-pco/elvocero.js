@@ -21,14 +21,14 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
         $scope.nota = {};
         $http.get('./php/noticias.getNoticia.php?c=' + codigo).success(function (data) {
 
-        $scope.nota = data;
+            $scope.nota = data;
 
         });
-        
+
         $scope.slides = {};
         $http.get('./php/imagenes.getImagen.php?i=' + codigo).success(function (datos) {
 
-        $scope.slides = datos;
+            $scope.slides = datos;
 
         });
 
@@ -66,7 +66,7 @@ app.controller('publicidadCtrl', ['$scope', '$routeParams', '$http', function ($
 
     }]);
 
-app.controller('mpiosCtrl', function ($scope) {
+app.controller('mpiosCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
     $scope.municipios = [{
             "idmunicipio": "1",
             "municipio": "Abal\u00e1"
@@ -387,5 +387,26 @@ app.controller('mpiosCtrl', function ($scope) {
             "municipio": "Tixp\u00e9hual"
         }];
 
+    var municipio = $routeParams.idmunicipio;
 
-});
+    $scope.busqueda = {};
+    $http.get("php/getBusquedaMunicipios.php?m=" + municipio).success(function (data) {
+
+        $scope.busqueda = data;
+    });
+
+
+}]);
+
+//app.controller('busquedaCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+//
+//
+//        var municipio = $routeParams.idmunicipio;
+//
+//        $scope.busqueda = {};
+//        $http.get("php/getBusquedaMunicipios.php?m=" + municipio).success(function (data) {
+//
+//            $scope.busqueda = data;
+//        });
+//
+//    }]);

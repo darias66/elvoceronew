@@ -7,6 +7,7 @@
 
             </div> <!-- /.panel-heading -->
             <br>
+            
             <div>
                 <div><a href="" data-toggle="modal" data-target="#buscar"><p class="busca"><b> Buscar</b> </p> <i class="smuni fa fa-search-plus fa-2x"></i> </a> </div>
             </div>
@@ -65,11 +66,11 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Selecciona un municipio:</label> 
-                    <select ng-model="selected" ng-options="m as opt.municipio for opt in municipios" ng-init="selected = 'Akil'"></select>
+                    <select ng-model="selected" ng-options="m as opt.municipio for opt in municipios"  ></select>
                 </div> <!-- /.form-group -->
 
 
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>del día:</label> 
                     <select class="form-horizontal">
                         <option value="1">01-01-2016</option>
@@ -84,10 +85,11 @@
                     </select>
 
                 </div> <!-- /.form-group -->
-                {{selected}}
+              
             </div>
+             
             <div class="modal-footer">
-                <div class="btn btn-info "><a href="#/noticiasMunicipios" id="btnmun"> Buscar </a></div>
+                <div class="btn btn-info " ><a href="#/noticiasMunicipios{{busqueda.idmunicipio}}" id="btnmun"  > Buscar </a></div>
             </div>
         </div><!-- /.modal-content --> 
     </div> <!-- /.modal-title-->
@@ -95,5 +97,4 @@
 <!-- /Entrada modal -->    
 
 
-</body>
-</html>
+
