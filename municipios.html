@@ -1,18 +1,21 @@
 <!-- CONTENIDO -->
 <section class="container espacio">
-    <div class="col-lg-7" ng-controller="seccionMunicipios">
+    <div class="col-lg-7" ng-controller="seccionMunicipios" >
+
+        <div id="flip">Selecciona un municipio</div>
+        <div class="form-group" id="panel">
+            <select ng-model="selected" ng-options="m as opt.municipio for opt in municipios" ng-init="selected=Acanceh" ></select>
+            <div class="btn btn-info " ><a href="#/noticiasMunicipios" id="btnmun"  > Buscar </a></div>
+        </div>
+
         <div class="panel panel-default">
             <div class="panel-heading" id="pmunicipios">
                 <h1 class="panel-title"><b>MUNICIPIOS</b></h1>
 
             </div> <!-- /.panel-heading -->
-            <br>
-            
-            <div>
-                <div><a href="" data-toggle="modal" data-target="#buscar"><p class="busca"><b> Buscar</b> </p> <i class="smuni fa fa-search-plus fa-2x"></i> </a> </div>
-            </div>
-            <br>
-            <hr>
+
+            <!-- <div><a href="" data-toggle="modal" data-target="#buscar"><p class="busca"><b> Buscar</b> </p> <i class="smuni fa fa-search-plus fa-2x"></i> </a> </div> -->
+
             <div class="panel-body">
                 <div class="row" ng-repeat="mu in mpios| limitTo: posicion | limitTo: -5">
                     <div class="col-sm-5">
@@ -60,7 +63,7 @@
 
 
 <!-- ENTRADA MODAL -->
-<div class="modal fade" id="buscar">
+<!--<div class="modal fade" id="buscar">
     <div class="modal-dialog" ng-controller="mpiosCtrl">   
         <div id="modalmun" class="modal-content">
             <div class="modal-body">
@@ -70,31 +73,30 @@
                 </div> <!-- /.form-group -->
 
 
-                <!--<div class="form-group">
-                    <label>del día:</label> 
-                    <select class="form-horizontal">
-                        <option value="1">01-01-2016</option>
-                        <option value="2">02-01-2016</option>
-                        <option value="3">03-01-2016</option>  
-                    </select>
-                    <label>al día:</label> 
-                    <select class="form-horizontal">
-                        <option value="1">04-01-2016</option>
-                        <option value="2">05-01-2016</option>
-                        <option value="3">06-01-2016</option> 
-                    </select>
+<!--<div class="form-group">
+    <label>del día:</label> 
+    <select class="form-horizontal">
+        <option value="1">01-01-2016</option>
+        <option value="2">02-01-2016</option>
+        <option value="3">03-01-2016</option>  
+    </select>
+    <label>al día:</label> 
+    <select class="form-horizontal">
+        <option value="1">04-01-2016</option>
+        <option value="2">05-01-2016</option>
+        <option value="3">06-01-2016</option> 
+    </select>
 
-                </div> <!-- /.form-group -->
-              
-            </div>
-             
-            <div class="modal-footer">
-                <div class="btn btn-info " ><a href="#/noticiasMunicipios{{busqueda.idmunicipio}}" id="btnmun"  > Buscar </a></div>
-            </div>
-        </div><!-- /.modal-content --> 
-    </div> <!-- /.modal-title-->
-</div><!-- /.modal-fade -->
+</div> <!-- /.form-group -->
+
+
+
+<!--  <div class="modal-footer">
+      <div class="btn btn-info " ><a href="#/noticiasMunicipios{{busqueda.idmunicipio}}" id="btnmun"  > Buscar </a></div>
+  </div>
+</div><!-- /.modal-content --> 
+<!--   </div> <!-- /.modal-title-->
+<!--</div><!-- /.modal-fade --> 
 <!-- /Entrada modal -->    
-
 
 

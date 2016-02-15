@@ -66,7 +66,7 @@ app.controller('publicidadCtrl', ['$scope', '$routeParams', '$http', function ($
 
     }]);
 
-app.controller('mpiosCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+app.controller('mpiosCtrl', ['$scope', function ($scope) {
     $scope.municipios = [{
             "idmunicipio": "1",
             "municipio": "Abal\u00e1"
@@ -386,15 +386,6 @@ app.controller('mpiosCtrl', ['$scope', '$routeParams', '$http', function ($scope
             "idmunicipio": "106",
             "municipio": "Tixp\u00e9hual"
         }];
-
-    var municipio = $routeParams.idmunicipio;
-
-    $scope.busqueda = {};
-    $http.get("php/getBusquedaMunicipios.php?m=" + municipio).success(function (data) {
-
-        $scope.busqueda = data;
-    });
-
 
 }]);
 
