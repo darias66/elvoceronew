@@ -17,8 +17,7 @@ $municipio = $_GET['m'];
 
 
 
-
-$query = "SELECT idNoticias,titulo,fecha,imagen,sintesis,contenido FROM noticias where idmunicipio ='$municipio' ORDER BY fecha DESC";
+$query = "SELECT n.idNoticias,n.titulo,n.fecha,n.imagen,n.sintesis, m.municipio FROM noticias n INNER JOIN municipios m ON m.idmunicipio = n.idmunicipio where n.idmunicipio = '$municipio' ORDER BY fecha DESC";
 
 
 
@@ -33,7 +32,8 @@ while ($row = mysql_fetch_array($result)) {
     $busqueda->titulo = utf8_encode($row["titulo"]);
     $busqueda->fecha = $row["fecha"];
     $busqueda->sintesis = utf8_encode($row["sintesis"]);
-    $busqueda->contenido = utf8_encode($row["contenido"]);
+    $busqueda->municipio = utf8_encode($row["municipio"]);
+    
 
     $arrayBusqueda[] = $busqueda;
 }

@@ -33,7 +33,7 @@ app.config(function ($routeProvider) {
             .when('/verVideos/:idVideos', {
                 templateUrl: 'verVideos.html'
             })
-            .when('/noticiasMunicipios', {
+            .when('/noticiasMunicipios/:idmunicipio', {
                 templateUrl: 'noticiasMunicipios.html'
             })
             .otherwise({
