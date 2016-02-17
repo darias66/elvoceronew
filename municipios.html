@@ -4,8 +4,13 @@
 
         <div id="flip">Selecciona un municipio</div>
         <div class="form-group" id="panel">
-            <select ng-model="selected" ng-options="m as opt.municipio for opt in municipios" ng-init="selected=Acanceh" ></select>
-            <div class="btn btn-info " ><a href="#/noticiasMunicipios" id="btnmun"  > Buscar </a></div>
+
+            <select ng-model="selected" ng-options="opt as opt.municipio for opt in municipios" ng-init="selected = 'Acanceh'"></select>
+            <h3>Tienes seleccionado : {{selected.idmunicipio}}</h3>
+
+            <div class="btn btn-info " >
+                <a href="#/noticiasMunicipios" id="btnmun"  > Buscar </a>
+            </div>
         </div>
 
         <div class="panel panel-default">
