@@ -4,7 +4,7 @@ include_once '../conexiones/conexion.php';
 $cn = new conexion();
 $cn->Conectarse();
 
-$query = 'SELECT banner FROM banners ORDER BY fecha DESC LIMIT 3
+$query = 'SELECT idBanners, banner FROM banners ORDER BY fecha DESC LIMIT 3
 ';
 
 $result = mysql_query($query);
@@ -14,6 +14,7 @@ $arrayPublicidadNotas = array();
 while ($row = mysql_fetch_array($result)) {
     $publicidadNotas = new stdClass();
     $publicidadNotas->banner = $row["banner"];
+    $publicidadNotas->idBanners = $row["idBanners"];
     
     $arrayPublicidadNotas[] = $publicidadNotas;
 }

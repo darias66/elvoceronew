@@ -6,11 +6,11 @@
             <label>Selecciona un municipio</label>
             <select ng-model="selected" ng-options="opt as opt.municipio for opt in municipios" ng-init="selected = 'Acanceh'"></select>
             <label>Tienes seleccionado : </label>{{selected.municipio}}
-          
+
             <div class="btn btn-info" >
                 <a href="#/noticiasMunicipios/{{selected.idmunicipio}}" id="btnmun" title="Buscar"  >
                     <i class="fa fa-search"></i> 
-            </a>
+                </a>
             </div>
         </div>
         <hr>

@@ -27,72 +27,72 @@ body{
     border: none;
 }
 .dropdown-menu{
-     display: none;
-     position:absolute;
-     background-color: #222;
-     width: 300px;
-     font-size: 15px;    
- }
- .dropdown-menu a{
-     text-decoration: none;
-     display: block;
- }
- #mu{
-     color: white;
- }
- .dropdown-menu a#mu:hover{
-     background-color: chartreuse;
-     color: black;
- }
- #poygo{
-     color: white;
- }
- .dropdown-menu a#poygo:hover{
-     background-color: #95A5A6;
-     color: black;
- }
- #poli{
-     color: white;
- }
- .dropdown-menu a#poli:hover{
-     background-color: orange;
-     color: black;
- }
- #de{
-     color: white;
- }
- .dropdown-menu a#de:hover{
-     background-color: deepskyblue;
-     color: black;
- }
- #espe{
-     color: white;
- }
- .dropdown-menu a#espe:hover{
-     background-color: deeppink;
-     color: black;
- }
- #pu{
-     color: white;
- }
- .dropdown-menu a#pu:hover{
-     background-color: darkmagenta;
-     color: black;
- }
- #vid{
-     color: white;
- }
- .dropdown-menu a#vid:hover{
-     background-color: yellow;
-     color: black;
- }
- #inicio{
-     color: white;
- }
- .dropdown-menu a#inicio:hover{
-     background-color: white;
-     color: black;
- }
+    display: none;
+    position:absolute;
+    background-color: #222;
+    width: 300px;
+    font-size: 15px;    
+}
+.dropdown-menu a{
+    text-decoration: none;
+    display: block;
+}
+#mu{
+    color: white;
+}
+.dropdown-menu a#mu:hover{
+    background-color: chartreuse;
+    color: black;
+}
+#poygo{
+    color: white;
+}
+.dropdown-menu a#poygo:hover{
+    background-color: #95A5A6;
+    color: black;
+}
+#poli{
+    color: white;
+}
+.dropdown-menu a#poli:hover{
+    background-color: orange;
+    color: black;
+}
+#de{
+    color: white;
+}
+.dropdown-menu a#de:hover{
+    background-color: deepskyblue;
+    color: black;
+}
+#espe{
+    color: white;
+}
+.dropdown-menu a#espe:hover{
+    background-color: deeppink;
+    color: black;
+}
+#pu{
+    color: white;
+}
+.dropdown-menu a#pu:hover{
+    background-color: darkmagenta;
+    color: black;
+}
+#vid{
+    color: white;
+}
+.dropdown-menu a#vid:hover{
+    background-color: yellow;
+    color: black;
+}
+#inicio{
+    color: white;
+}
+.dropdown-menu a#inicio:hover{
+    background-color: white;
+    color: black;
+}
 /* * botones menú * */
 .navbar-right{
     margin-right: 20px;
@@ -325,14 +325,14 @@ body{
     text-align: left;
 }
 .fecha{
-   text-align: right;
-   color:black;
+    text-align: right;
+    color:black;
 }
 .imgnota{
-   width: 570px;
-   height: 370px;
-   margin: auto;
-   
+    width: 570px;
+    height: 370px;
+    margin: auto;
+
 }
 .textonoticias{
     text-align: justify;
@@ -369,15 +369,15 @@ body{
 }
 
 #btnmun{
-   float: right;
-   color: white;
-   text-decoration: none;
-  
+    float: right;
+    color: white;
+    text-decoration: none;
+
 }
 .smuni{
     color: black;
     float: right;
-   
+
 }
 .busca{
     color: black;
@@ -412,4 +412,31 @@ body{
 .txtpublicidad{
     text-align: center;
 }
+
+
+
+#slides_control{
+    height: 200px;
+}
+.img{
+    margin:auto;
+    width: 400px;
+}
+#slides_control {
+    position:absolute;
+    width: 400px;
+    left:50%;
+    top:20px;
+    margin-left:-200px;
+}
+
+.espacio1{
+    margin-top: 300px;
+}
+
+
+/*.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;}*/
 

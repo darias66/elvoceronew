@@ -1,4 +1,4 @@
-var app = angular.module('elvoceroApp', ['ngRoute', 'youtube-controller', 'youtube-service', 'youtube-directive']);
+var app = angular.module('elvoceroApp', ['ngRoute', 'ui.bootstrap' ,'youtube-controller', 'youtube-service', 'youtube-directive']);
 
 //CONTROLADOR PRINCIPAL
 app.controller('menuCtrl', ['$scope', function ($scope) {
@@ -25,14 +25,18 @@ app.controller('noticiaCtrl', ['$scope', '$routeParams', '$http', function ($sco
 
         });
 
-        $scope.slides = {};
-        $http.get('./php/imagenes.getImagen.php?i=' + codigo).success(function (datos) {
+        $scope.slider = {};
+        $http.get('./php/imagenesGetImagen.php?i=' + codigo).success(function (datos) {
 
-            $scope.slides = datos;
+            $scope.slider = datos;
 
         });
 
     }]);
+
+//CONTROLADOR PARA SLIDER //
+
+
 
 
 //CONTROLADOR PARA LA SECCION VIDEOS

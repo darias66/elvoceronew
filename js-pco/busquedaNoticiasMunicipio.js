@@ -7,14 +7,17 @@ app.controller('busquedaCtrl', ['$scope', '$routeParams', '$http', function ($sc
         $http.get("php/getBusquedaNoticiasMunicipio.php?m=" + municipio).success(function (data) {
 
             if (jQuery.isEmptyObject(data)) {
-                
+
                 sweetAlert("Lo sentimos", "No hay noticias", "error");
-              
-            }else {
+                window.location = "#/municipios";
+                return;
+
+            } else {
 
                 $scope.busqueda = data;
 
-            } ;
+            }
+            ;
 
 
 

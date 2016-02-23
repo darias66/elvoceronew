@@ -5,7 +5,7 @@
             <div class="panel-body">
                 <div class="row" >
                     <div class="col-lg-12">
-                        
+
 
                         <h4 class="titulonota">{{nota.title| uppercase}}</h4>
                         <!--{{nota|json}}-->
@@ -23,21 +23,66 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                               
 
-                                        <carousel interval=3000>
-                                            <slide ng-repeat="slide in slides" active="slide.active">
+                                <div id="slides_control" class="carousel slide" data-ride="carousel">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#slides_control" data-slide-to="0" class="active"></li>
+                                        <li data-target="#slides_control" data-slide-to="1"></li>
+                                        <li data-target="#slides_control" data-slide-to="2"></li>
+
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="images/A.jpg" alt="" class="img">
+                                            <div class="carousel-caption">
+                                                <p>Descripción uno </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="item ">
+                                            <img src="images/B.jpg" alt="" class="img">
+                                            <div class="carousel-caption">
+                                                <p>Descripción dos </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="images/C.jpg" alt="" class="img">
+                                            <div class="carousel-caption">
+                                                <p>Descripción tres </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+
+                                <!--<carousel interval=3000>
+                                            <slide ng-repeat="slide in slider" active="slide.active">
                                                 <img ng-src="{{slide.rutas}}">
                                                 <div class="carousel-caption">
 
                                                 </div>
                                             </slide>
-                                        </carousel>
-                                  
+                                        </carousel> -->
+
                             </div>
+                            <div class="espacio1"></div>
                             <div class="panel-footer">
                                 <p>
-                                    contenido pie...
+
                                 </p>
                             </div>
                         </div>
@@ -56,7 +101,7 @@
     </div> <!-- /.lg-7 -->
 
     <div ng-include="publicidad"></div>
-    
+
 
 </section> <!-- /.Container -->
 <!-- /Contenido -->
