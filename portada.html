@@ -13,21 +13,21 @@
 
                     <div class="col-sm-4" ng-repeat="n in noticia">
                         <div class="thumbnail pnoticias">
-                            <img src="{{n.imagen}}" alt="" class="imgportada" > 
+                            <img id="imgmun" ng-src="{{n.imagen}}" alt=""> 
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{n.title}}</h4>
                                 <p class="fecha"> {{n.fecha}}</p>
                                 <p class="ptxtnoticias">
                                     {{n.sintesis}} 
                                 </p>
-                                
+
                                 <p><a href="#/noticia/{{n.id}}" class="btn btn-primary" role="button">Leer más</a> 
                             </div>
-                            
+
                         </div>
                     </div> <!-- /.lg-4 -->
 
-                    
+
                 </div> <!-- /.row -->
             </div> <!-- /.panel-body -->
         </div> <!-- /panel -->
@@ -43,7 +43,7 @@
 
                     <div class="col-sm-4" ng-repeat="p in politica">
                         <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="{{p.imagen}}" alt="...">
+                            <img id="imggob" ng-src="{{p.imagen}}" alt="...">
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{p.title}}</h4>
                                 <p class="fecha">{{p.fecha}}</p>
@@ -70,7 +70,7 @@
 
                     <div class="col-sm-4"  ng-repeat="poli in policia">
                         <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img-pco/images (2).jpg" alt="...">
+                            <img id="imgpol" ng-src="{{poli.imagen}}" alt="...">
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{poli.title}}</h4>
                                 <p class="fecha">{{poli.fecha}}</p>
@@ -97,7 +97,7 @@
 
                     <div class="col-sm-4" ng-repeat="dep in deportes">
                         <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img-pco/images (2).jpg" alt="...">
+                            <img id="imgdep" ng-src="{{dep.imagen}}" alt="...">
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{dep.title}}</h4>
                                 <p class="fecha">{{dep.fecha}}</p>
@@ -124,7 +124,7 @@
 
                     <div class="col-sm-4" ng-repeat="espe in espec">
                         <div class="thumbnail pnoticias">
-                            <img class="imgportada" src="img-pco/images (2).jpg" alt="...">
+                            <img id="imgesp" ng-src="{{espe.imagen}}" alt="...">
                             <div class="caption">
                                 <h4 class="ptitulonoticias">{{espe.title}}</h4>
                                 <p class="fecha">{{espe.fecha}}</p>

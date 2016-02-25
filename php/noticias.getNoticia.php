@@ -16,7 +16,7 @@ if (!isset($_GET['c'])) {
 // Desinfectar el parametro
 $codigo = $_GET['c'];
 
-$query = "SELECT idNoticias, fecha, titulo, imagen, contenido FROM noticias WHERE idNoticias ='$codigo'";
+$query = "SELECT idNoticias, fecha, titulo, imagen, pie, contenido FROM noticias WHERE idNoticias ='$codigo'";
 
 $result = mysql_query($query);
 
@@ -28,6 +28,7 @@ while ($row = mysql_fetch_array($result)) {
     $nota->title = utf8_encode($row["titulo"]);
     $nota->fecha = $row["fecha"];
     $nota->contenido = utf8_encode($row["contenido"]);
+    $nota->pie = utf8_encode($row["pie"]);
 }
 
 echo $json_response = json_encode($nota);

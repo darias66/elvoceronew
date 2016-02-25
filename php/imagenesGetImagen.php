@@ -16,7 +16,7 @@ if (!isset($_GET['i'])) {
 // Desinfectar el parametro
 $codigo = $_GET['i'];
 
-$query1 = "SELECT rutas FROM imagenes WHERE idNoticias='$codigo'";
+$query1 = "SELECT rutas,pie FROM imagenes WHERE idNoticias='$codigo'";
 
 $result1 = mysql_query($query1);
 
@@ -25,7 +25,8 @@ $arraySlider = array();
 while ($row = mysql_fetch_array($result1)) {
     $slider = new stdClass();
     $slider->rutas = $row["rutas"];
-
+    $slider->pie = utf8_encode($row["pie"]) ;
+    
     $arraySlider[] = $slider;
 }
 
